@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Desktop Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index_2.html">Education</a></li>
+        <li><a href="index_6.html">Projects</a></li>
+        <li><a href="index_3.html">Skills</a></li>
+        <li><a href="index_4.html">Experience</a></li>
+        <li><a href="index_5.html">Connect</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile Hamburger -->
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <ul>
+        <li><a href="index.html" onclick="closeSidebar()">Home</a></li>
+        <li><a href="index_2.html" onclick="closeSidebar()">Education</a></li>
+        <li><a href="index_6.html" onclick="closeSidebar()">Projects</a></li>
+        <li><a href="index_3.html" onclick="closeSidebar()">Skills</a></li>
+        <li><a href="index_4.html" onclick="closeSidebar()">Experience</a></li>
+        <li><a href="index_5.html" onclick="closeSidebar()">Connect</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+<style> /* Desktop Navbar */
+    header {
+      background: #111;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+    }
+
+    header nav ul li a:hover {
+      background: cyan;
+      color: black;
+      border-radius: 5px;
+    }
+
+    /* Hamburger Icon */
+    .hamburger {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      padding: 10px 15px;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background-color: cyan;
+      border-radius: 5px;
+      z-index: 1001;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      transition: left 0.3s ease;
+      z-index: 1000;
+      padding-top: 60px;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar nav ul li {
+      border-bottom: 1px solid #444;
+    }
+
+    .sidebar nav ul li a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .sidebar nav ul li a:hover {
+      background-color: #575757;
+    }
+
+    /* Overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+
+    /* Responsive - Mobile only */
+    @media (max-width: 768px) {
+      header {
+        display: none;
+      }
+
+      .hamburger,
+      .sidebar {
+        display: block;
+      }
+    }
+  </style></style>
+  <!-- Script -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+      document.getElementById("overlay").classList.toggle("active");
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("active");
+      document.getElementById("overlay").classList.remove("active");
+    }
+  </script>
+
+  <title>Projects</title><br><br><br><br><br>
+  <h1 class="proj">Projects</h1>
+  <style>
+  body {
+    margin: 0;
+    background-color: #0a0a23;
+    color: white;
+  }
+    .proj{
+text-align:center;
+    color:cyan;
+    font-size:41px;}
+    
+
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 60px 20px;
+    animation: fadeInUp 1.5s ease forwards;
+    opacity: 0;
+    transform: translateY(40px);
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  img.pro {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+    flex: 1 1 400px;
+  }
+
+  .project-content {
+    flex: 1 1 400px;
+    text-align: left;
+  }
+
+  .project-content h2 {
+    color: cyan;
+  }
+
+  .project-content h3 {
+    margin-bottom: 5px;
+    color: #aaa;
+  }
+
+  .certif {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .certif a {
+    text-decoration: none;
+  }
+
+  .certif button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .certif button:hover {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .project-content {
+      text-align: center;
+    }
+
+    .certif {
+      justify-content: center;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+ <!-- Project 1 -->
+<section>
+  <img src="nihArts.png" class="pro" alt="NihArts E-commerce Website">
+  <div class="project-content">
+    <h2>Project: NihArts</h2>
+    <h3>About:</h3>
+    <p>NihArts is a full-stack e-commerce web application for a handmade arts and crafts business. It sells nine product categories: Embroidery Hoops, Lippan Art, Pipe Cleaner Bouquets, Keychains, Flower Pots, Hairbands, Clutches, Dancing Flowers, and Fridge Magnets.
+    Two separate interfaces share one backend and database:</p>
+    <ul>
+      <li><strong>Customer storefront</strong> – browse, buy, and review products.</li>
+      <li><strong>Seller/admin dashboard</strong> – manage products, categories, and orders.</li>
+    </ul>
+
+    <h3>Description:</h3>
+    <p>This project includes:</p>
+    <ul>
+      <li><strong>Frontend (React + Vite, Tailwind CSS)</strong> – Registration and login with validation, product catalog with category filters, cart, checkout with GPS address detection, order history, and photo reviews for delivered orders.</li>
+      <li><strong>Backend (Node.js + Express)</strong> – REST API with JWT authentication, bcrypt password hashing, and email OTP for password reset.</li>
+      <li><strong>Database (MongoDB Atlas)</strong> – Stores users, products, categories, orders, and reviews.</li>
+      <li><strong>Payments (Razorpay)</strong> – Secure checkout with payment signature verification.</li>
+      <li><strong>Admin dashboard</strong> – Live sales stats, product and category management, and order status updates.</li>
+      <li><strong>Deployment</strong> – Frontend on Vercel, backend on Render, and product images on Cloudinary.</li>
+    </ul>
+    <div class="certif">
+      <a href="https://niha-arts-original-updated-manikanta2804s-projects.vercel.app/" target="_blank"><button>View Project</button></a>
+    </div>
+  </div>
+</section>
+  <!-- Project 2 -->
+  <section>
+    <img src="portfolio_img.png" class="pro" alt="Portfolio Website">
+    <div class="project-content">
+      <h2>Project: Developer Portfolio</h2>
+      <h3>About:</h3>
+      <p>A modern and responsive personal portfolio showcasing skills, projects, and contact information.</p>
+      <h3>Description:</h3>
+      <p>Built with HTML, CSS, JavaScript, and animations for a smooth user experience.</p>
+      <div class="certif">
+        <a href="https://portfolio-jravgcbe3-manikanta2804s-projects.vercel.app/" ><button>Source Code</button></a>
+        <a href="https://github.com/Manikanta2804/Portfolio.git"><button>View Project</button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 3 -->
+  <section>
+  <img src="brewdash.png" class="pro" alt="BrewDash Food Delivery Platform">
+  <div class="project-content">
+    <h2>Project: BrewDash 🚀</h2>
+    <h3>About:</h3>
+    <p>BrewDash is a full-stack food delivery platform with separate seller, delivery, and admin panels. It offers real-time order tracking with Socket.io and secure online payments with Razorpay.</p>
+
+    <h3>Features:</h3>
+    <ul>
+      <li>User registration, login, profile, orders, and live order tracking</li>
+      <li>Seller dashboard with product management and file uploads</li>
+      <li>Admin panel and a delivery partner app</li>
+      <li>Real-time location updates for deliveries</li>
+      <li>Hiring applications</li>
+      <li>Email and SMS notifications</li>
+    </ul>
+
+    <h3>Description:</h3>
+    <p>This project uses:</p>
+    <ul>
+      <li><strong>Backend:</strong> Node.js, Express.js</li>
+      <li><strong>Database:</strong> MongoDB (Mongoose)</li>
+      <li><strong>Real-time:</strong> Socket.io</li>
+      <li><strong>Payments:</strong> Razorpay</li>
+      <li><strong>Security:</strong> Helmet, rate limiting, Mongo-sanitize</li>
+      <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+      <li><strong>Notifications:</strong> Nodemailer, Twilio</li>
+    </ul>
+
+    <div class="certif">
+      <a href="https://github.com/Manikanta2804/brew" target="_blank"><button>Source Code</button></a>
+      <a href="#"><button>View Project</button></a>
+    </div>
+  </div>
+</section>
+
+  <!-- Project 4 -->
+<section>
+  <img src="disease-prediction.png" class="pro" alt="Disease Name Prediction System">
+  <div class="project-content">
+    <h2>Project: Disease Name Prediction</h2>
+    <h3>About:</h3>
+    <p>A distributed machine-learning system that predicts disease names from clinical or medical data. It covers the full pipeline from data ingestion and preprocessing to model training, evaluation, and serving predictions through a REST API.</p>
+
+    <h3>Features:</h3>
+    <ul>
+      <li>End-to-end pipeline: data ingestion, preprocessing, training, evaluation, and serving</li>
+      <li>Distributed training support (multi-node / multi-GPU)</li>
+      <li>REST API that returns the predicted disease name with a confidence score</li>
+      <li>React frontend for interactive predictions</li>
+      <li>Evaluation with accuracy, precision, recall, F1-score, and confusion matrix</li>
+    </ul>
+
+    <h3>Description:</h3>
+    <p>This project uses:</p>
+    <ul>
+      <li><strong>Languages:</strong> Python, Java, C++</li>
+      <li><strong>ML:</strong> PyTorch or TensorFlow, pandas, scikit-learn</li>
+      <li><strong>Backend / API:</strong> FastAPI (Python)</li>
+      <li><strong>Frontend:</strong> React</li>
+      <li><strong>Database:</strong> PostgreSQL / MySQL (SQL)</li>
+      <li><strong>Deployment:</strong> Docker, Kubernetes (optional)</li>
+    </ul>
+
+    <div class="certif">
+      <a href="https://github.com/Manikanta2804/2303A51458_b07_python_for_data_science" target="_blank"><button>Source Code</button></a>
+      <a href="#"><button>View Project</button></a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
